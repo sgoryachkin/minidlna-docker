@@ -29,5 +29,5 @@ script:
   
   # push
  # - docker tag $REPO_NAME:$COMMIT $REPO_NAME:$TAG
-#  - docker tag $REPO_NAME:$COMMIT $REPO_NAME:travis-$TRAVIS_BUILD_NUMBER
+ #  - docker tag $REPO_NAME:$COMMIT $REPO_NAME:travis-$TRAVIS_BUILD_NUMBER
  # - docker push $REPO_NAME
