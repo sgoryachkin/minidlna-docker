@@ -25,7 +25,7 @@ script:
   #- export REPO_NAME=$DOCKER_USER/minidlna-armhf
   - export REPO_NAME=sego/minidlna-armhf
   
-  - docker build -t $REPO_NAME:$COMMIT
+  - docker build -t $REPO_NAME:$COMMIT .
   
   # push
  # - docker tag $REPO_NAME:$COMMIT $REPO_NAME:$TAG
