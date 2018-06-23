@@ -1,8 +1,9 @@
 FROM arm32v6/alpine:3.7
 
-RUN \
-  apk update && \
-	apk add minidlna
+RUN apk --no-cache add bash minidlna
+#RUN \
+#  apk update && \
+#apk add minidlna
 
 ADD ./config/ /config/
 
