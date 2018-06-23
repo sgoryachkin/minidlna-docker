@@ -22,7 +22,7 @@ script:
   # build images
 #  - docker login -u $DOCKER_USER -p $DOCKER_PASS
   
-  #- export REPO_NAME=$DOCKER_USER/aceproxy-pi
+  #- export REPO_NAME=$DOCKER_USER/minidlna-armhf
   - export REPO_NAME=sego/minidlna-armhf
   
   - docker build -t $REPO_NAME:$COMMIT
