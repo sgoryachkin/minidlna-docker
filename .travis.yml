@@ -18,7 +18,7 @@ script:
   - docker --version 
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   # prepare qemu
-  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - docker run --rm --privileged multiarch/qemu-user-static:arm --reset
   # build images
 #  - docker login -u $DOCKER_USER -p $DOCKER_PASS
   
