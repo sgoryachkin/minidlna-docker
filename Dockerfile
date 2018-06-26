@@ -5,8 +5,7 @@ FROM multiarch/alpine:armhf-v3.7
 RUN \
    apk update && \
    apk upgrade && \
-   apk add bash minidlna && \
-   apk -v cache clean
+   apk add bash minidlna
 
 #ADD ./config/ /config/
 
