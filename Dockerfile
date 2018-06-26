@@ -7,4 +7,6 @@ RUN \
 
 EXPOSE 8200 1900/udp
 
-ENTRYPOINT /usr/sbin/minidlnad -S
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
