@@ -7,7 +7,7 @@ RUN \
    apk upgrade && \
    apk add bash minidlna
 
-ADD ./config/ /config/
+#ADD ./config/ /config/
 
 EXPOSE 8200 1900/udp
 
