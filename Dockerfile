@@ -7,4 +7,4 @@ RUN \
 
 EXPOSE 8200 1900/udp
 
-ENTRYPOINT /usr/sbin/minidlnad -R -S
+ENTRYPOINT /usr/sbin/minidlnad -S
