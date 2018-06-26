@@ -3,8 +3,8 @@ FROM multiarch/alpine:armhf-v3.7
 
 #RUN apk --no-cache add bash minidlna
 RUN \
-   apk --no-cache update && \
-   apk add --no-cache bash minidlna
+   apk --no-cache upgrade && \
+   apk --no-cache add  bash minidlna
 
 ADD ./config/ /config/
 
