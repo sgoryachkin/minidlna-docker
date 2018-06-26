@@ -1,4 +1,4 @@
-FROM multiarch/alpine:arm64-v3.7
+FROM multiarch/alpine:armhf
 
 
 RUN apk --no-cache add bash minidlna
