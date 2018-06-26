@@ -16,5 +16,7 @@ docker run -d --net=host \
   -v <media dir on host>:/media \
   -e MINIDLNA_MEDIA_DIR=/media \
   -e MINIDLNA_FRIENDLY_NAME=MyMini \
-  vladgh/minidlna
+  -e PUID=<uid for user> \
+  -e PGID=<gid for user> \
+  sego/minidlna-armhf
 ```
