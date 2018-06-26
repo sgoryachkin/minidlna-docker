@@ -1,10 +1,10 @@
 FROM multiarch/alpine:armhf
 
 
-RUN apk --no-cache add bash minidlna
-#RUN \
-#  apk update && \
-#apk add minidlna
+#RUN apk --no-cache add bash minidlna
+RUN \
+   apk --no-cache update && \
+   apk add --no-cache bash minidlna
 
 ADD ./config/ /config/
 
