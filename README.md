@@ -1,2 +1,2 @@
-[![Build Status](https://travis-ci.org/sgoryachkin/minidlna-armhf-docker.svg?branch=master)](https://travis-ci.org/sgoryachkin/minidlna-armhf-docker)
+[![Build Status](https://img.shields.io/docker/build/sego/minidlna-armhf.svg)](https://hub.docker.com/r/sego/minidlna-armhf/)
 # minidlna-docker-arm
