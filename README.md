@@ -13,10 +13,9 @@ and run your container:
 ```
 docker run -d --net=host \
   -p 8200:8200 \
-  -v <media dir on host>:/media \
-  -e MINIDLNA_MEDIA_DIR=/media \
-  -e MINIDLNA_FRIENDLY_NAME=MyMini \
-  -e PUID=<uid for user> \
-  -e PGID=<gid for user> \
+  --mount type=bind,source=/mnt/storage1/Media,destination=/media,readonly \
+  -e MINIDLNA_media_dir=V,/media/Movies \
+  -e MINIDLNA_media_dir=PV,/media/Photos \
+  -e MINIDLNA_friendly_name=MyMini2 \
   sego/minidlna-armhf
 ```
