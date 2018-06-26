@@ -18,4 +18,4 @@ for VAR in $(env); do
 done
 
 # Start daemon
-exec /usr/sbin/minidlnad -d "$@"
+exec /usr/sbin/minidlnad -S "$@"
