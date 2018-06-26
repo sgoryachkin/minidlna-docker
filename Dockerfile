@@ -1,4 +1,4 @@
-FROM multiarch/alpine:armhf
+FROM multiarch/alpine:armhf-v3.7
 
 
 #RUN apk --no-cache add bash minidlna
