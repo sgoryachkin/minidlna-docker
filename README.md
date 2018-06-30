@@ -17,7 +17,6 @@ docker run -d --net=host \
   -p 8200:8200 \
   --mount type=bind,source=/mnt/storage1/Media,destination=/media,readonly \
   -e MINIDLNA_media_dir=V,/media/Movies \
-  -e MINIDLNA_media_dir=PV,/media/Photos \
-  -e MINIDLNA_friendly_name=MyMini2 \
+  -e MINIDLNA_friendly_name=Movies \
   sego/minidlna-armhf
 ```
