@@ -7,6 +7,8 @@ RUN \
 
 EXPOSE 8200 1900/udp
 
+USER minidlna
+
 COPY entrypoint.sh /
 
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
