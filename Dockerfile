@@ -5,10 +5,16 @@ RUN \
    apk upgrade && \
    apk add bash minidlna
 
-EXPOSE 8200 1900/udp
+COPY entrypoint.sh /
+
+COPY prepare.sh /
+
+RUN /prepare.sh
 
 USER minidlna
 
 COPY entrypoint.sh /
+
+EXPOSE 8200 1900/udp
 
 ENTRYPOINT ["/entrypoint.sh"]
