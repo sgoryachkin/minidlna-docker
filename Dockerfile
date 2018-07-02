@@ -11,10 +11,8 @@ COPY prepare.sh /
 
 RUN /prepare.sh
 
-USER minidlna
-
-COPY entrypoint.sh /
-
 EXPOSE 8200 1900/udp
+
+USER minidlna
 
 ENTRYPOINT ["/entrypoint.sh"]
