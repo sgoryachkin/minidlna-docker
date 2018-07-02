@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Remove old pid if it exists
-[ -f /var/run/minidlna/minidlna.pid ] && rm -f /var/run/minidlna/minidlna.pid
-
 # Change configuration
 > /etc/minidlna.conf
 for VAR in $(env); do
