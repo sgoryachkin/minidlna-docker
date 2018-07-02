@@ -11,4 +11,4 @@ USER minidlna
 
 COPY entrypoint.sh /
 
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
