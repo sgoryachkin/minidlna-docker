@@ -11,4 +11,4 @@ for VAR in $(env); do
 done
 
 # Start daemon
-exec /usr/sbin/minidlnad -S -u minidlna "$@"
+exec /usr/sbin/minidlnad -S "$@"
