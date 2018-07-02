@@ -13,6 +13,6 @@ RUN /prepare.sh
 
 EXPOSE 8200 1900/udp
 
-USER minidlna
+#USER minidlna
 
 ENTRYPOINT ["/entrypoint.sh"]
