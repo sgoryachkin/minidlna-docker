@@ -5,5 +5,5 @@ services:
   sut:
     image: arm32v7/debian:stretch
     depends_on:
-      - server
+      - work
     command: /bin/bash "netstat -lntp | grep -q '0\.0\.0\.0:9091'"
