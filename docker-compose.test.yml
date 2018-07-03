@@ -1,5 +1,5 @@
-version: '2'
-  services:
-    sut:
-      build: .
-      command: tests.sh
+version: "3.6" 
+services:
+  sut:
+    build: .
+    command: tests.sh
