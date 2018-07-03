@@ -3,7 +3,7 @@ services:
   work:
     build: .
   sut:
-    image: arm32v7/debian:stretch
+    image: arm32v7/debian:armhf-stretch
     depends_on:
       - work
     command: /bin/bash "netstat -lntp | grep -q '0\.0\.0\.0:9091'"
