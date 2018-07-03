@@ -1,8 +1,8 @@
 version: "3.6" 
 services:
-  server:
+  work:
     build: .
-  client:
+  sut:
     image: arm32v7/debian:stretch
     depends_on:
       - server
