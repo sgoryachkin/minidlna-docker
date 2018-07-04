@@ -6,4 +6,4 @@ services:
     image: alpine
     depends_on:
       - work
-    command: /bin/sh "wget work:8200"
+    command: 'wget work:8200'
