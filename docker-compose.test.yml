@@ -3,7 +3,7 @@ services:
   work:
     build: .
   sut:
-    image: debian
+    image: alpine
     depends_on:
       - work
-    command: /bin/bash "netstat -lntp"
+    command: /bin/sh "wget work:8200"
