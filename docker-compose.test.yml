@@ -7,4 +7,4 @@ services:
     depends_on:
       - work
     entrypoint: sh -c
-    command: 'sleep 5s && wget work:8200'
+    command: 'sleep 5s; wget work:8200'
