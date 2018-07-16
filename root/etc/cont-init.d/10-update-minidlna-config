@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/with-contenv bash
 
 # Change configuration
 > /etc/minidlna.conf
@@ -9,6 +9,3 @@ for VAR in $(env); do
     echo "${minidlna_name}=${minidlna_value}" >> /etc/minidlna.conf
   fi
 done
-
-# Start daemon
-exec /usr/sbin/minidlnad -S -u minidlna "$@"

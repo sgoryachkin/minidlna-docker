@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+# Start daemon
+exec /usr/sbin/minidlnad -S -u minidlna "$@"
