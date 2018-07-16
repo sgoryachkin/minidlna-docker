@@ -7,4 +7,4 @@ services:
     depends_on:
       - work
     entrypoint: sh -c
-    command: "wget work:8200; echo 2"
+    command: ["wget", "work:8200", ";", "echo", "2"]
