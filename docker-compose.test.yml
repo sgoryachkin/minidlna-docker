@@ -6,4 +6,4 @@ services:
     image: alpine
     depends_on:
       - work
-    command: 'sleep 10 && wget work:8200'
+    command: 'sleep 10; wget work:8200'
