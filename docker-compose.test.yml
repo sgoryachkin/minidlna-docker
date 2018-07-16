@@ -1,4 +1,4 @@
-version: "3.6" 
+version: "3" 
 services:
   work:
     build: .
@@ -6,4 +6,8 @@ services:
     image: alpine
     depends_on:
       - work
-    command: ["wget", "work:8200"]
+    command: >
+      /bin/sh -c "
+        sleep 5;
+        wget work:8200;
+      "
