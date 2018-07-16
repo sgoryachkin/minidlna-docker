@@ -6,5 +6,5 @@ services:
     image: alpine
     depends_on:
       - work
-    entrypoint: sh -c
+    entrypoint: ["/bin/sh"]
     command: ["wget", "work:8200", ";", "echo", "2"]
