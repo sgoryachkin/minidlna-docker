@@ -8,6 +8,6 @@ services:
       - work
     command: >
       /bin/sh -c "
-        sleep 5;
+        sleep 15;
         wget work:8200;
       "
