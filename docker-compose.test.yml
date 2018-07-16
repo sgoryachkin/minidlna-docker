@@ -6,4 +6,5 @@ services:
     image: alpine
     depends_on:
       - work
-    command: 'sleep 10; wget work:8200'
+    entrypoint: sh -c
+    command: 'sleep 5 && wget work:8200'
