@@ -3,7 +3,7 @@ FROM multiarch/alpine:armhf-v3.8
 RUN \
    apk update && \
    apk upgrade && \
-   apk add bash minidlna
+   apk add bash minidlna ffmpegthumbnailer
 
 # Install s6-overlay
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-armhf.tar.gz /tmp/

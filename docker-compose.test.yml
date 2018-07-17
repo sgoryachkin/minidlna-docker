@@ -1,6 +1,7 @@
 version: "3" 
 services:
   work:
+    privileged: true
     build: .
   sut:
     image: alpine

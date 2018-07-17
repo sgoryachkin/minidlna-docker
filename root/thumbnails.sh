@@ -1,5 +1,5 @@
 #!/bin/bash
-media_dir="$( dirname "$0" )";
+media_dir="/media";
 echo "Media dir: $media_dir"
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
@@ -32,4 +32,4 @@ do
 done;
 
 # Clean Up Empty dirs
-find "${media_dir}" -type d -empty -delete
+#find "${media_dir}" -type d -empty -delete

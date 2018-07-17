@@ -9,3 +9,9 @@ for VAR in $(env); do
     echo "${minidlna_name}=${minidlna_value}" >> /etc/minidlna.conf
   fi
 done
+
+mkdir /data/thumbnails
+mkdir /data/workdir
+mount -t overlay overlay -o lowerdir=/media,upperdir=/data/thumbnails,workdir=/data/workdir /media
+chmod +x /thumbnails.sh
+/thumbnails.sh
