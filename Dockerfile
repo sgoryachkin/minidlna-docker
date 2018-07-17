@@ -12,6 +12,8 @@ RUN gunzip -c /tmp/s6-overlay-armhf.tar.gz | tar -xf - -C /
 # Copy local files
 COPY root/ /
 
+VOLUME [ "/data", "/media" ]
+
 EXPOSE 8200 1900/udp
 
 ENTRYPOINT ["/init"]
