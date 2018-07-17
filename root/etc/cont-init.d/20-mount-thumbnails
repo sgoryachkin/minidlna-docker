@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+
+mkdir -p /data/thumbnails
+mkdir -p /data/workdir
+mount -t overlay overlay -o lowerdir=/media,upperdir=/data/thumbnails,workdir=/data/workdir /media
+/thumbnails.sh

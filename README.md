@@ -4,7 +4,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/sego/minidlna-armhf.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-armhf)
 
 
-This is MiniDLNA on top of minimal Alpine armhf.
+This is MiniDLNA with Thumbnails on top of minimal Alpine armhf.
 It can be configured with environment variables.
 
 ## Usage
