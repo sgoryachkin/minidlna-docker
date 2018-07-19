@@ -1,4 +1,4 @@
-ARG architecture
+ARG architecture=amd64
 FROM multiarch/alpine:${architecture}-v3.8
 
 RUN \
