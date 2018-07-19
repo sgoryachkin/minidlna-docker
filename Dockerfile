@@ -1,6 +1,6 @@
 ARG architecture=amd64
 FROM multiarch/alpine:${architecture}-v3.8
-ARG architecture=$architecture
+ARG architecture=amd64
 RUN \
    apk update && \
    apk upgrade && \
