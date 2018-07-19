@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker tag $IMAGE_NAME-aarch64 $DOCKER_REPO-aarch64:$CACHE_TAG
+docker push $DOCKER_REPO-aarch64:$CACHE_TAG
