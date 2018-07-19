@@ -1,8 +1,10 @@
-# minidlna-armhf
+# minidlna
 [![Docker Automated](https://img.shields.io/docker/automated/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna)
 [![Docker Build](https://img.shields.io/docker/build/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna
 
+
 ## Supported architecture
+
 [![amd64](https://img.shields.io/docker/pulls/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna)
 [![aarch64](https://img.shields.io/docker/pulls/sego/minidlna-aarch64.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-aarch64)
 [![armhf](https://img.shields.io/docker/pulls/sego/minidlna-armhf.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-armhf)
