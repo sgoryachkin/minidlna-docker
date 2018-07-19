@@ -1,6 +1,6 @@
 # minidlna
 [![Docker Automated](https://img.shields.io/docker/automated/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna)
-[![Docker Build](https://img.shields.io/docker/build/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna
+[![Docker Build](https://img.shields.io/docker/build/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna)
 
 
 ## Supported architecture
