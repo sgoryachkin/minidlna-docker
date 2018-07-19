@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME 
-#docker build --build-arg CUSTOM=armhf -f $DOCKERFILE_PATH -t $IMAGE_NAME-armhf
-#docker build --build-arg CUSTOM=aarch64 -f $DOCKERFILE_PATH -t $IMAGE_NAME-aarch64
+docker build --build-arg ARCH=armhf -t $IMAGE_NAME
+docker build --build-arg ARCH=aarch64 -t $IMAGE_NAME
+docker build --build-arg ARCH=amd64 -t $IMAGE_NAME
