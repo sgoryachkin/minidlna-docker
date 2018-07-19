@@ -6,5 +6,5 @@ echo $CACHE_TAG
 echo 0000000000
 printenv
 
-docker tag $IMAGE_NAME-aarch64 $DOCKER_REPO-aarch64:$CACHE_TAG
-docker push $DOCKER_REPO-aarch64:$CACHE_TAG
+docker tag $IMAGE_NAME-aarch64 $DOCKER_REPO-aarch64:$DOCKER_TAG
+docker push $DOCKER_REPO-aarch64:$DOCKER_TAG
