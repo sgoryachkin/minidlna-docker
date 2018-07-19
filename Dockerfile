@@ -1,3 +1,4 @@
+ARG ARCH
 FROM multiarch/alpine:${ARCH:armhf}-v3.8
 
 RUN \
