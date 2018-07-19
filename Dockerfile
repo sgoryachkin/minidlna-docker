@@ -1,6 +1,11 @@
+# Base image architecture
 ARG architecture=amd64
+
 FROM multiarch/alpine:${architecture}-v3.8
+
+# s6-overlay architecture
 ARG architecture=amd64
+
 RUN \
    apk update && \
    apk upgrade && \
