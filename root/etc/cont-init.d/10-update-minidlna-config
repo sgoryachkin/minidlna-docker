@@ -1,11 +1,21 @@
 #!/usr/bin/with-contenv bash
 
 # Change configuration
-> /etc/minidlna.conf
+: > /etc/minidlna.conf
 for VAR in $(env); do
   if [[ "$VAR" =~ ^MINIDLNA_ ]]; then
-    minidlna_name=$(echo "$VAR" | sed -r "s/MINIDLNA_(.*)=.*/\1/g" | tr '[:upper:]' '[:lower:]')
-    minidlna_value=$(echo "$VAR" | sed -r "s/.*=(.*)/\1/g")
+    minidlna_value=$(echo "$VAR" | sed -r "s/.*=(.*)/\\1/g")
+    # Support multi media dirs
+    if [[ "$VAR" =~ ^MINIDLNA_media_dir ]]; then
+      minidlna_name='media_dir'
+      # Replace to overlayfs data dir with thumnails
+      minidlna_value=$(echo ${minidlna_value/media/data})
+    else
+      minidlna_name=$(echo "$VAR" | sed -r "s/MINIDLNA_(.*)=.*/\\1/g" | tr '[:upper:]' '[:lower:]')
+    fi
+    
     echo "${minidlna_name}=${minidlna_value}" >> /etc/minidlna.conf
   fi
 done
+
+echo "db_dir=/db/minidlna" >> /etc/minidlna.conf

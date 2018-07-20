@@ -9,7 +9,7 @@ ARG architecture=amd64
 RUN \
    apk update && \
    apk upgrade && \
-   apk add bash minidlna ffmpegthumbnailer
+   apk add bash minidlna ffmpegthumbnailer inotify-tools
 
 # Install s6-overlay
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-${architecture}.tar.gz /tmp/
@@ -19,8 +19,9 @@ RUN gunzip -c /tmp/s6-overlay-${architecture}.tar.gz | tar -xf - -C /
 COPY root/ /
 
 RUN chmod +x /thumbnails.sh
+RUN chmod +x /thumbnails-monitor.sh
 
-VOLUME [ "/data", "/media" ]
+VOLUME [ "/db", "/media" ]
 
 EXPOSE 8200 1900/udp
 

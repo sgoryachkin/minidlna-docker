@@ -1,5 +1,5 @@
 #!/bin/bash
-media_dir="/media";
+media_dir="/data";
 echo "Media dir: $media_dir"
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")

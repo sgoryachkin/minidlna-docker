@@ -1,6 +1,10 @@
 #!/usr/bin/with-contenv bash
 
-mkdir -p /data/thumbnails
-mkdir -p /data/workdir
-mount -t overlay overlay -o lowerdir=/media,upperdir=/data/thumbnails,workdir=/data/workdir /media
-/thumbnails.sh
+mkdir -p /db/thumbnails
+mkdir -p /db/workdir
+mkdir -p /db/minidlna
+mkdir -p /data
+
+chown -R minidlna /db/minidlna
+
+mount -t overlay overlay -o lowerdir=/media,upperdir=/db/thumbnails,workdir=/db/workdir /data
