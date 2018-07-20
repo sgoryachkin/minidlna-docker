@@ -3,16 +3,22 @@
 [![Docker Build](https://img.shields.io/docker/build/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna)
 
 
-## Supported architecture
-
-amd64 [![amd64](https://img.shields.io/docker/pulls/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna)
-
-aarch64 [![aarch64](https://img.shields.io/docker/pulls/sego/minidlna-aarch64.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-aarch64)
-
-armhf [![armhf](https://img.shields.io/docker/pulls/sego/minidlna-armhf.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-armhf)
+## Overview
 
 This is MiniDLNA with thumbnails on top of minimal Alpine Linux.
 It can be configured with environment variables.
+
+
+## Supported architecture
+
+Next repositories are availible:
+
+Arch | Repository | Pulls
+------------|------------ | -------------
+AMD64|minidlna | [![amd64](https://img.shields.io/docker/pulls/sego/minidlna.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna)
+AArch64|minidlna-aarch64 | [![aarch64](https://img.shields.io/docker/pulls/sego/minidlna-aarch64.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-aarch64) 
+ARMHF|minidlna-armhf | [![armhf](https://img.shields.io/docker/pulls/sego/minidlna-armhf.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-armhf)
+
 
 ## Usage
 
