@@ -9,7 +9,7 @@ ARG architecture=amd64
 RUN \
    apk update && \
    apk upgrade && \
-   apk add bash minidlna ffmpegthumbnailer inotify-tools aufs-tools
+   apk add bash minidlna ffmpegthumbnailer inotify-tools aufs-util
 
 # Install s6-overlay
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-${architecture}.tar.gz /tmp/
