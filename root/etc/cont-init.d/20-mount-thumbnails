@@ -7,5 +7,5 @@ mkdir -p /data
 
 chown -R minidlna /db/minidlna
 
-#mount -t overlay overlay -o lowerdir=/media,upperdir=/db/thumbnails,workdir=/db/workdir /data
-mount -t aufs -o br:/media=rr:/db/thumbnails=rw none /data
+mount -t overlay overlay -o lowerdir=/media,upperdir=/db/thumbnails,workdir=/db/workdir /data
+#mount -t aufs -o br:/media=rr:/db/thumbnails=rw none /data
