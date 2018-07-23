@@ -4,9 +4,14 @@ mkdir -p /db/thumbnails
 #mkdir -p /db/workdir
 mkdir -p /db/minidlna
 mkdir -p /data
+mkdir -p /var/run/minidlna
 
 chown -R minidlna /db/minidlna
+chown -R minidlna /db/thumbnails
+chown -R minidlna /data
+chown -R minidlna /var/run/minidlna
+
 
 #mount -t overlay overlay -o lowerdir=/media,upperdir=/db/thumbnails,workdir=/db/workdir /data
 #mount -t aufs -o dirs=/db/thumbnails=rw:/media=ro none /data
-unionfs -o dirs=/db/thumbnails=rw:/media=ro /data
+s6-setuidgid minidlna unionfs -o dirs=/db/thumbnails=rw:/media=ro /data

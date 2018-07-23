@@ -8,7 +8,7 @@ IFS=$(echo -en "\n\b")
 echo "Create thumbnails";
 for video_file in $(find "${media_dir}" -type f -iname "*.mov" -o -iname "*.avi" -o -iname "*.mkv" -o -iname "*.mp4" -o -iname "*.m4v");
 do
-    echo "${video_file}";
+    #echo "${video_file}";
     thumbnail_file=${video_file}.cover.jpg;
     if ! [ -f "${thumbnail_file}" ]
     then
@@ -17,13 +17,13 @@ do
     fi
 done;
 
-# Clean Up
-echo "Clen Up thumbnails";
+# Cleanup
+echo "Clenup thumbnails";
 for thumbnail_file in $(find "${media_dir}" -type f -iname "*.mov.cover.jpg" -o -iname "*.avi.cover.jpg" -o -iname "*.mkv.cover.jpg" -o -iname "*.mp4.cover.jpg" -o -iname "*.m4v.cover.jpg");
 do
-    echo "${thumbnail_file}";
+    #echo "${thumbnail_file}";
     video_file=${thumbnail_file%.cover.jpg};
-    echo "${video_file}";
+    #echo "${video_file}";
     if ! [ -f "${video_file}" ]
     then
         echo "- remove ${thumbnail_file}";
