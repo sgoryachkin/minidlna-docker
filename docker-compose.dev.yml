@@ -6,12 +6,20 @@ services:
     environment: 
       - MINIDLNA_media_dir=V,/media
       - MINIDLNA_friendly_name=Movies
-    ports:
-      - "8200:8200"
-      - "1900:1900"
     volumes: 
       - type: bind
         source: /home/sego/tst
         target: /media
         read_only: true
+    networks:
+      pubnet:
+        ipv4_address: 192.168.1.231
+networks:
+  pubnet:
+    driver: macvlan
+    driver_opts:
+      parent: wlp3s0
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
 
