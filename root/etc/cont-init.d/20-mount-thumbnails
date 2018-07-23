@@ -3,12 +3,10 @@
 mkdir -p /db/thumbnails
 #mkdir -p /db/workdir
 mkdir -p /db/minidlna
-mkdir -p /data
 mkdir -p /var/run/minidlna
 
 chown -R minidlna /db/minidlna
 chown -R minidlna /db/thumbnails
-chown -R minidlna /data
 chown -R minidlna /var/run/minidlna
 
 

@@ -19,7 +19,13 @@ RUN gunzip -c /tmp/s6-overlay-${architecture}.tar.gz | tar -xf - -C /
 COPY root/ /
 
 RUN chmod +x /thumbnails.sh && \
-    chmod +x /thumbnails-monitor.sh
+    chmod +x /thumbnails-monitor.sh && \
+    mkdir -p /data && \
+    chown -R minidlna /data && \
+    mkdir -p /var/run/minidlna && \
+    chown -R minidlna /var/run/minidlna
+
+
 
 VOLUME [ "/db", "/media" ]
 
