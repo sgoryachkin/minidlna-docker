@@ -8,4 +8,5 @@ mkdir -p /data
 chown -R minidlna /db/minidlna
 
 #mount -t overlay overlay -o lowerdir=/media,upperdir=/db/thumbnails,workdir=/db/workdir /data
-mount -t aufs -o dirs=/db/thumbnails=rw:/media=ro none /data
+#mount -t aufs -o dirs=/db/thumbnails=rw:/media=ro none /data
+unionfs -o dirs=/db/thumbnails:/media=ro /data
