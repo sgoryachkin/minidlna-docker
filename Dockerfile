@@ -20,8 +20,10 @@ COPY root/ /
 
 RUN chmod +x /thumbnails.sh && \
     chmod +x /thumbnails-monitor.sh && \
+    adduser -DH thumbnailer && \
     mkdir -p /data && \
-    chown -R minidlna /data && \
+    chown -R thumbnailer /data && \
+    chmod -R 447 /data && \
     mkdir -p /var/run/minidlna && \
     chown -R minidlna /var/run/minidlna
 
