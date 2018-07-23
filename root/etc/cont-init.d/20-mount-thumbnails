@@ -2,7 +2,7 @@
 
 mkdir -p /db/thumbnails
 #mkdir -p /db/workdir
-#mkdir -p /db/minidlna
+mkdir -p /db/minidlna
 mkdir -p /data
 
 chown -R minidlna /db/minidlna
