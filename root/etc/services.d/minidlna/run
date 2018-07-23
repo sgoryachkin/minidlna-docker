@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
 # Start daemon
-exec /usr/sbin/minidlnad -S -u minidlna
+exec s6-setuidgid minidlna /usr/sbin/minidlnad -S
