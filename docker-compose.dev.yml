@@ -1,0 +1,17 @@
+version: "3.3" 
+services:
+  work:
+    privileged: true
+    build: .
+    environment: 
+      - MINIDLNA_media_dir=V,/media
+      - MINIDLNA_friendly_name=Movies
+    ports:
+      - "8200:8200"
+      - "1900:1900"
+    volumes: 
+      - type: bind
+        source: /home/sego/tst
+        target: /media
+        read_only: true
+
