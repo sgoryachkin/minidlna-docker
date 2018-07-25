@@ -1,3 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/execlineb -P
 
-exec /thumbnails-monitor.sh
+# Start daemon
+/thumbnails-monitor.sh

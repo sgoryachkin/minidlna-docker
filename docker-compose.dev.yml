@@ -1,4 +1,4 @@
-version: "3.3" 
+version: "3.6" 
 services:
   work:
     privileged: true
@@ -11,15 +11,9 @@ services:
         source: /home/sego/tst
         target: /media
         read_only: true
-    networks:
-      pubnet:
-        ipv4_address: 192.168.1.231
-networks:
-  pubnet:
-    driver: macvlan
-    driver_opts:
-      parent: wlp3s0
-    ipam:
-      config:
-        - subnet: 192.168.1.0/24
-
+      - type: bind
+        source: /home/sego/tst_db
+        target: /db
+    ports:
+      - 8200:8200
+      - 1901:1900/udp
