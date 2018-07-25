@@ -10,8 +10,8 @@ mkdir -p /db/minidlna
 #chown -R minidlna /var/run/minidlna
 
 
-mount -t overlay overlay -o lowerdir=/media,upperdir=/db/thumbnails,workdir=/db/workdir /data
+#mount -t overlay overlay -o lowerdir=/media,upperdir=/db/thumbnails,workdir=/db/workdir /data
 #mount -t overlay overlay -o lowerdir=/media:/db/thumbnails /data
 #mount -t aufs -o dirs=/db/thumbnails=rw:/media=ro -o udbar=reval none /data
 #s6-setuidgid minidlna unionfs -o relaxed_permissions -o dirs=/db/thumbnails=RW:/media=RO /data
-#unionfs -o dirs=/db/thumbnails=rw:/media /data 
+unionfs -o dirs=/db/thumbnails=rw:/media /data 
