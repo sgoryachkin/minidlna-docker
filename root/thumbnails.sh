@@ -14,6 +14,7 @@ do
     then
         echo "- create ${thumbnail_file}";
         ffmpegthumbnailer -s 160 -i "${video_file}" -o "${thumbnail_file}";
+        touch -f ${video_file}
     fi
 done;
 
@@ -32,4 +33,4 @@ do
 done;
 
 # Clean Up Empty dirs
-#find "${media_dir}" -type d -empty -delete
+#find "${media_dir}" -type d -empty -delete'[[';;?/
