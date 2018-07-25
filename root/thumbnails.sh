@@ -9,8 +9,8 @@ echo "Create thumbnails";
 for video_file in $(find "${media_dir}" -type f -iname "*.mov" -o -iname "*.avi" -o -iname "*.mkv" -o -iname "*.mp4" -o -iname "*.m4v");
 do
     #echo "${video_file}";
-    thumbnail_file=/db/minidlna/art_cache${video_file}.jpg;
-    thumbnail_file="${thumbnail_file%.*}"
+    thumbnail_file=/db/minidlna/art_cache${video_file};
+    thumbnail_file="${thumbnail_file%.*}.jpg"
 
     install -Dv / "${thumbnail_file}"
     if ! [ -f "${thumbnail_file}" ]
