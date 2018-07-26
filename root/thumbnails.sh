@@ -4,7 +4,7 @@ SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
 media_dir="/media";
-thumbnails_dir="/thumbnails";
+thumbnails_dir="/db/thumbnails";
 echo "Media dir: $media_dir"
 echo "Thumbnails dir: $thumbnails_dir"
 
@@ -13,7 +13,7 @@ echo "Create thumbnails";
 for video_file in $(find "${media_dir}" -type f -iname "*.mov" -o -iname "*.avi" -o -iname "*.mkv" -o -iname "*.mp4" -o -iname "*.m4v");
 do
     #echo "${video_file}";
-    thumbnail_file=/db/minidlna/art_cache${video_file};
+    thumbnail_file=${thumbnails_dir}${video_file};
     thumbnail_file="${thumbnail_file%.*}.jpg"
 
     install -Dv / "${thumbnail_file}"
