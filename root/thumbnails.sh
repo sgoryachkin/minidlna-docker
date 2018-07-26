@@ -1,8 +1,12 @@
 #!/bin/bash
-media_dir="/media";
-echo "Media dir: $media_dir"
+
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
+
+media_dir="/media";
+thumbnails_dir="/thumbnails";
+echo "Media dir: $media_dir"
+echo "Thumbnails dir: $thumbnails_dir"
 
 # Create thumbnails
 echo "Create thumbnails";
