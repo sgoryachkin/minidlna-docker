@@ -1,9 +1,8 @@
 version: "3.6" 
 services:
   work:
-    privileged: true
     build: .
-    environment: 
+    environment:
       - MINIDLNA_media_dir=V,/media
       - MINIDLNA_friendly_name=Movies
     volumes: 

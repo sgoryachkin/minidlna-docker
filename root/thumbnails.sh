@@ -17,11 +17,17 @@ do
     thumbnail_file="${thumbnail_file%.*}.jpg"
 
     install -Dv / "${thumbnail_file}"
+    sleep 3
     if ! [ -f "${thumbnail_file}" ]
     then
         echo "- create ${thumbnail_file}";
+        #coproc sqlite3 /db/minidlna/files.db
+        #sqlite3 /db/minidlna/files.db "INSERT INTO album_art (path) VALUES('${thumbnail_file}');"
+        #sqlite3 /db/minidlna/files.db "SELECT '${thumbnail_file}' WHERE NOT EXISTS(SELECT 1 FROM album_art WHERE path = '${thumbnail_file}');"
+        sqlite3 /db/minidlna/files.db "INSERT INTO album_art (path) SELECT '${thumbnail_file}' WHERE NOT EXISTS(SELECT 1 FROM album_art WHERE path = '${thumbnail_file}');
+                                       UPDATE details SET album_art=(SELECT id FROM album_art WHERE path='${thumbnail_file}') WHERE path='${video_file}';"
         ffmpegthumbnailer -s 160 -i "${video_file}" -o "${thumbnail_file}";
-        touch -f ${video_file}
+        #kill $COPROC_PID
     fi
 done;
 
