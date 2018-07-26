@@ -8,6 +8,8 @@ thumbnails_dir="/db/thumbnails";
 echo "Media dir: $media_dir"
 echo "Thumbnails dir: $thumbnails_dir"
 
+sleep 3
+
 # Create thumbnails
 echo "Create thumbnails";
 for video_file in $(find "${media_dir}" -type f -iname "*.mov" -o -iname "*.avi" -o -iname "*.mkv" -o -iname "*.mp4" -o -iname "*.m4v");
@@ -17,7 +19,6 @@ do
     thumbnail_file="${thumbnail_file%.*}.jpg"
 
     install -Dv / "${thumbnail_file}"
-    sleep 3
     if ! [ -f "${thumbnail_file}" ]
     then
         echo "- create ${thumbnail_file}";
