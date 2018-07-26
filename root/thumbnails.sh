@@ -26,7 +26,7 @@ do
         #sqlite3 /db/minidlna/files.db "INSERT INTO album_art (path) VALUES('${thumbnail_file}');"
         #sqlite3 /db/minidlna/files.db "SELECT '${thumbnail_file}' WHERE NOT EXISTS(SELECT 1 FROM album_art WHERE path = '${thumbnail_file}');"
         sqlite3 /db/minidlna/files.db "INSERT INTO album_art (path) SELECT '${thumbnail_file}' WHERE NOT EXISTS(SELECT 1 FROM album_art WHERE path = '${thumbnail_file}');
-                                       UPDATE details SET album_art=(SELECT id FROM album_art WHERE path='${thumbnail_file}') WHERE path='${video_file}';"
+                                       UPDATE details SET album_art=(SELECT id FROM album_art WHERE path='${thumbnail_file}'), thumbnail=1 WHERE path='${video_file}';"
         ffmpegthumbnailer -s 160 -i "${video_file}" -o "${thumbnail_file}";
         #kill $COPROC_PID
     fi
