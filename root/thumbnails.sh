@@ -40,7 +40,7 @@ done;
 
 
 #Открываем базу:
-coproc sqlite3 test.sqlite
+#coproc sqlite3 test.sqlite
 
 
 #Запрос без ответа:
