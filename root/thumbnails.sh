@@ -16,33 +16,32 @@ for video_file in $(find "${media_dir}" -type f -iname "*.mov" -o -iname "*.avi"
 do
     #echo "${video_file}";
     thumbnail_file=${thumbnails_dir}${video_file};
-    thumbnail_file="${thumbnail_file%.*}.jpg"
+    thumbnail_file="${thumbnail_file}.cover.jpg"
 
     install -Dv / "${thumbnail_file}"
     if ! [ -f "${thumbnail_file}" ]
     then
         echo "- create ${thumbnail_file}";
-        #coproc sqlite3 /db/minidlna/files.db
-        #sqlite3 /db/minidlna/files.db "INSERT INTO album_art (path) VALUES('${thumbnail_file}');"
-        #sqlite3 /db/minidlna/files.db "SELECT '${thumbnail_file}' WHERE NOT EXISTS(SELECT 1 FROM album_art WHERE path = '${thumbnail_file}');"
+        ffmpegthumbnailer -s 160 -i "${video_file}" -o "${thumbnail_file}";
         sqlite3 /db/minidlna/files.db "INSERT INTO album_art (path) SELECT '${thumbnail_file}' WHERE NOT EXISTS(SELECT 1 FROM album_art WHERE path = '${thumbnail_file}');
                                        UPDATE details SET album_art=(SELECT id FROM album_art WHERE path='${thumbnail_file}'), thumbnail=1 WHERE path='${video_file}';"
-        ffmpegthumbnailer -s 160 -i "${video_file}" -o "${thumbnail_file}";
-        #kill $COPROC_PID
     fi
 done;
 
 # Cleanup
 echo "Clenup thumbnails";
-for thumbnail_file in $(find "${media_dir}" -type f -iname "*.mov.cover.jpg" -o -iname "*.avi.cover.jpg" -o -iname "*.mkv.cover.jpg" -o -iname "*.mp4.cover.jpg" -o -iname "*.m4v.cover.jpg");
+for thumbnail_file in $(find "${thumbnails_dir}" -type f -iname "*.mov.cover.jpg" -o -iname "*.avi.cover.jpg" -o -iname "*.mkv.cover.jpg" -o -iname "*.mp4.cover.jpg" -o -iname "*.m4v.cover.jpg");
 do
     #echo "${thumbnail_file}";
     video_file=${thumbnail_file%.cover.jpg};
+    video_file=${video_file#"$thumbnails_dir"};
+
     #echo "${video_file}";
     if ! [ -f "${video_file}" ]
     then
         echo "- remove ${thumbnail_file}";
         rm "${thumbnail_file}";
+        sqlite3 /db/minidlna/files.db "DELETE FROM album_art WHERE path = '${thumbnail_file}';"
     fi
 done;
 
