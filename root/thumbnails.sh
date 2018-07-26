@@ -17,8 +17,8 @@ do
     #echo "${video_file}";
     thumbnail_file=${thumbnails_dir}${video_file};
     thumbnail_file="${thumbnail_file}.cover.jpg"
-
-    install -Dv / "${thumbnail_file}"
+    mkdir -p $(dirname ${thumbnail_file})
+    #install -D "${thumbnail_file}" /
     if ! [ -f "${thumbnail_file}" ]
     then
         echo "- create ${thumbnail_file}";
@@ -47,22 +47,3 @@ done;
 
 # Clean Up Empty dirs
 #find "${media_dir}" -type d -empty -delete'[[';;?/
-
-
-#Открываем базу:
-#coproc sqlite3 test.sqlite
-
-
-#Запрос без ответа:
-#echo "CREATE TABLE test (id INTEGER, text TEXT);" >&${COPROC[1]}
-#echo "INSERT INTO test (id,text) VALUES(1,one);" >&${COPROC[1]}
-
-
-#Запрос с ответом, должна быть одна строка!!!
-#echo "SELECT text FROM ok WHERE text='one' LIMIT 1;" >&${COPROC[1]}
-#read res <&${COPROC[0]}
-#echo $res
-
-
-#Пид sqlite хранится в $COPROC_PID, например можно его пришибить в конце
-#kill $COPROC_PID

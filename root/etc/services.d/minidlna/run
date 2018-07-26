@@ -1,4 +1,4 @@
 #!/usr/bin/execlineb -P
 
 # Start daemon
-/usr/sbin/minidlnad -S -r 
+/usr/sbin/minidlnad -S -r -u minidlna
