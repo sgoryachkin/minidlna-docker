@@ -1,7 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-mkdir -p /db/thumbnails
-mkdir -p /db/minidlna
+mkdir -p /db/minidlna/thumbnails
 
 #chown -R minidlna /db/minidlna
 #chown -R thumbnailer /db/thumbnails

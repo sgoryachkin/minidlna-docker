@@ -4,7 +4,7 @@ SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
 media_dir="/media";
-thumbnails_dir="/db/thumbnails";
+thumbnails_dir="/db/minidlna/thumbnails";
 echo "Media dir: $media_dir"
 echo "Thumbnails dir: $thumbnails_dir"
 
