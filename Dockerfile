@@ -3,6 +3,8 @@ ARG architecture=amd64
 
 FROM multiarch/alpine:${architecture}-v3.8
 
+MAINTAINER sgoryachkin <artful.tiger@gmail.com>
+
 # s6-overlay architecture
 ARG architecture=amd64
 
