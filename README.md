@@ -20,6 +20,10 @@ AMD64|sego/minidlna | [![amd64](https://img.shields.io/docker/pulls/sego/minidln
 AArch64|sego/minidlna-aarch64 | [![aarch64](https://img.shields.io/docker/pulls/sego/minidlna-aarch64.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-aarch64) 
 ARMHF|sego/minidlna-armhf | [![armhf](https://img.shields.io/docker/pulls/sego/minidlna-armhf.svg?style=plastic)](https://hub.docker.com/r/sego/minidlna-armhf)
 
+## System requirements
+
+Support [inotify](https://en.wikipedia.org/wiki/Inotify) in kernel and in /media volume file system
+
 
 ## Usage
 
