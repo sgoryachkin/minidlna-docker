@@ -1,7 +1,7 @@
 # Base image architecture
 ARG architecture=amd64
 
-FROM multiarch/alpine:${architecture}-v3.8
+FROM multiarch/alpine:${architecture}-v3.9
 
 MAINTAINER sgoryachkin <artful.tiger@gmail.com>
 
